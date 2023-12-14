@@ -1,4 +1,11 @@
 //Exercise #3
+// ให้เรียงลำดับการทำงานของ Asynchronous Operation จาก Function สองอันนี้คือ getJohnProfile และ getJohnOrders โดยมีรายละเอียดดังนี้
+// เขียนโค้ดเพื่อเรียงลำดับการทำงานด้วยวิธี Promise Property ปกติ
+// กำหนดให้ลำดับการทำงานต้องเป็นดังนี้
+// getJohnProfile จะต้องถูก Execute ก่อน
+// ให้แสดงผลตัวข้อมูลที่ได้จาก Function getJohnProfile ด้วย console.log()
+// getJohnOrders จะต้องถูก Execute ถัดมา
+// ให้แสดงผลตัวข้อมูลที่ได้จาก Function getJohnOrders ด้วย console.log()
 let getJohnProfile = () => {
   return new Promise(function (resolve) {
     setTimeout(
@@ -33,3 +40,8 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+const caseResolve = (data) => {
+  console.log(data);
+};
+
+getJohnProfile().then(caseResolve).then(getJohnOrders).then(caseResolve);
